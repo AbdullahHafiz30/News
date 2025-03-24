@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct NewsApp: App {
+    @StateObject private var favoritesManager = FavoritesManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environmentObject(favoritesManager)
         }
     }
 }
+
